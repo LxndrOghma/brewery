@@ -4,9 +4,5 @@
     {{brewery.name}}
   </li>
 </ul>
-<div *ngIf="selectedBrewery">
-  <h2>{{selectedBrewery.name}}</h2>
-  <p *ngIf="selectedBrewery.street">Adress: {{selectedBrewery.street}}</p>
-  <p *ngIf="selectedBrewery.phone">Phone: {{selectedBrewery.phone}}</p>
-  <p *ngIf="selectedBrewery.website_url">Site: {{selectedBrewery.website_url}}</p>
-</div>
+
+<app-brewery-detail [brewery]="selectedBrewery"></app-brewery-detail>
