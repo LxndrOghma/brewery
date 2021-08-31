@@ -12,16 +12,10 @@ export class BreweriesComponent implements OnInit {
 
   breweries: Brewery[] = [];
 
-  selectedBrewery?: Brewery;
-
   constructor(private breweryService: BreweryService) { }
 
   ngOnInit(): void {
     this.getBreweries();
-  }
-
-  onSelect(brewery: Brewery): void {
-    this.selectedBrewery = brewery;
   }
 
   getBreweries(): void {

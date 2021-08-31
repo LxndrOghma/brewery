@@ -14,4 +14,9 @@ export class BreweryService {
     const breweries = of(BREWERIES);
     return breweries;
   }
+
+  getBrewery(id: number): Observable<Brewery> {
+    const brewery = BREWERIES.find(brewery => brewery.id === id)!;
+    return of(brewery);
+  }
 }

@@ -1,8 +1,8 @@
 <h2>Breweries list</h2>
 <ul>
-  <li *ngFor="let brewery of breweries" (click)="onSelect(brewery)">
-    {{brewery.name}}
+  <li *ngFor="let brewery of breweries">
+    <a routerLink="/detail/{{brewery.id}}">
+      {{brewery.name}}
+    </a>
   </li>
 </ul>
-
-<app-brewery-detail [brewery]="selectedBrewery"></app-brewery-detail>
