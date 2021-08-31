@@ -1,0 +1,20 @@
+export interface Brewery {
+  id: number,
+  obdb_id: string,
+  name: string,
+  brewery_type: string,
+  street: null | string,
+  address_2: null | string,
+  address_3: null | string,
+  city: string,
+  state: string,
+  county_province: null | string,
+  postal_code: string,
+  country: string,
+  longitude: null | string,
+  latitude: null | string,
+  phone: null | string,
+  website_url: null | string,
+  updated_at: string,
+  created_at: string
+}
