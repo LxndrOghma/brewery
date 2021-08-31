@@ -1,4 +1,8 @@
 <h2>Breweries list</h2>
+<div>
+  <label for="brewery-search">Brewery search:</label>
+  <input id="brewery-search" placeholder="Enter brewery name">
+</div>
 <ul>
   <li *ngFor="let brewery of breweries">
     <a routerLink="/detail/{{brewery.id}}">
