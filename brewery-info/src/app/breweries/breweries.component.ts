@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Brewery } from '../brewery';
 import { BreweryService } from '../brewery.service';
-import { BREWERIES } from '../mock-breweries';
 
 @Component({
   selector: 'app-breweries',
@@ -20,6 +19,14 @@ export class BreweriesComponent implements OnInit {
 
   getBreweries(): void {
     this.breweryService.getBreweries()
+      .subscribe(breweries => this.breweries = breweries);
+  }
+
+  onSearch(val: string): void {
+    val.trim().length === 0 ?
+    this.breweryService.getBreweries()
+      .subscribe(breweries => this.breweries = breweries) :
+    this.breweryService.searchBreweries(val)
       .subscribe(breweries => this.breweries = breweries);
   }
 

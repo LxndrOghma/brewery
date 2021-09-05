@@ -1,7 +1,7 @@
 <h2>Breweries list</h2>
 <div>
   <label for="brewery-search">Brewery search:</label>
-  <input id="brewery-search" placeholder="Enter brewery name">
+  <input #searchBox id="brewery-search" placeholder="Enter brewery name" (input)="onSearch(searchBox.value)">
 </div>
 <ul>
   <li *ngFor="let brewery of breweries">

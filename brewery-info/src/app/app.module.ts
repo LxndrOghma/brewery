@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { BreweriesComponent } from './breweries/breweries.component';
@@ -10,11 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     BreweriesComponent,
-    BreweryDetailComponent
+    BreweryDetailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
