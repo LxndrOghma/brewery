@@ -1,7 +1,19 @@
-<div *ngIf="brewery">
-  <h2>{{brewery.name}}</h2>
-  <p *ngIf="brewery.street">Adress: {{brewery.street}}</p>
-  <p *ngIf="brewery.phone">Phone: {{brewery.phone}}</p>
-  <p *ngIf="brewery.website_url">Site: {{brewery.website_url}}</p>
-  <button (click)="goBack()">Back to breweries list</button>
+<div class="brewery-detail" *ngIf="brewery">
+  <div class="brewery-detail__info info">
+    <h2 class="info__title">{{brewery.name}}</h2>
+    <p *ngIf="brewery.street" class="info__adress">Adress: {{brewery.street}}</p>
+    <p *ngIf="brewery.phone" class="info__phone">Phone:
+      <a href="tel:{{brewery.phone}}">{{brewery.phone}}</a>
+    </p>
+    <p *ngIf="brewery.website_url" class="info_site">Site:
+      <a href={{brewery.website_url}}>
+        {{brewery.website_url}}
+      </a>
+    </p>
+  </div>
+  <app-map *ngIf="brewery.latitude" class="brewery-detail__map" [brewery]="brewery"></app-map>
+  <div *ngIf="!brewery.latitude" class="brewery-detail__no-map no-map">
+    <p class="no-map__alert">No coordinates found</p>
+  </div>
+  <button class="brewery-detail__button button" (click)="goBack()">Back to breweries list</button>
 </div>

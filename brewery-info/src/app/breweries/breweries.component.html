@@ -1,12 +1,14 @@
-<h2>Breweries list</h2>
-<div>
-  <label for="brewery-search">Brewery search:</label>
-  <input #searchBox id="brewery-search" placeholder="Enter brewery name" (input)="onSearch(searchBox.value)">
-</div>
-<ul>
-  <li *ngFor="let brewery of breweries">
-    <a routerLink="/detail/{{brewery.id}}">
-      {{brewery.name}}
-    </a>
-  </li>
-</ul>
+<section class="breweries">
+  <h2 class="breweries__title">Breweries list</h2>
+  <div class="breweries__search search">
+    <label class="search__label" for="brewery-search">Brewery search:</label>
+    <input class="search__input" #searchBox id="brewery-search" placeholder="Enter brewery name" (input)="onSearch(searchBox.value)">
+  </div>
+  <ul class="breweries__list breweries-list">
+    <li class="breweries-list__item" *ngFor="let brewery of breweries">
+      <a class="breweries-list__link" routerLink="/detail/{{brewery.id}}">
+        {{brewery.name}}
+      </a>
+    </li>
+  </ul>
+</section>

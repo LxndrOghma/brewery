@@ -1,3 +1,106 @@
-li {
-  cursor: pointer;
+@import '../../variables.scss';
+
+.breweries__title {
+  font-size: 25px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.breweries__search {
+  margin-bottom: 10px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search__label {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.search__input {
+  width: 100%;
+  height: 40px;
+  border: 2px solid $dark-grey;
+}
+
+.breweries-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+.breweries-list__item {
+  width: 100%;
+  height: 40px;
+  border: 1px solid $dark-grey;
+  border-radius: 5px;
+  margin-bottom: 5px;
+
+  &:hover {
+    background-color: $ocher ;
+  }
+}
+
+.breweries-list__link {
+  display: block;
+  line-height: 40px;
+  width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .breweries {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 10px;
+  }
+
+  .breweries__title {
+    margin-bottom: 15px;
+  }
+
+  .breweries__title {
+    grid-column: 1 / -1;
+  }
+
+  .search__input {
+    height: 60px
+  }
+
+  .breweries-list__item {
+    height: 60px;
+  }
+
+  .breweries-list__link {
+    line-height: 60px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .breweries__title {
+    margin-bottom: 20px;
+  }
+
+  .breweries-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+
+  .search__input {
+    height: 50px
+  }
+
+  .breweries-list__item {
+    height: 50px;
+  }
+
+  .breweries-list__link {
+    line-height: 50px;
+  }
 }

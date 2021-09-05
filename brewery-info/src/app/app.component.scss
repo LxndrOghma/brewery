@@ -1,0 +1,50 @@
+@import '../variables.scss';
+
+.container {
+  margin: 0 auto;
+  max-width: $mobile-width-container;
+  padding: 0 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__img {
+  width: 40px;
+  height: 40px;
+}
+
+.header__title {
+  font-size: 30px;
+}
+
+@media (min-width: $tablet-width) {
+  .container {
+    max-width: $tablet-width-container;
+    padding: 0 30px;
+  }
+
+  .header {
+    justify-content: flex-start;
+  }
+
+  .header__img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+
+  .header__title {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .container {
+    max-width: $desktop-width-container;
+    padding: 0 110px;
+  }
+}
