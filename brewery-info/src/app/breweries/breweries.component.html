@@ -4,6 +4,7 @@
     <label class="search__label" for="brewery-search">Brewery search:</label>
     <input class="search__input" #searchBox id="brewery-search" placeholder="Enter brewery name" (input)="onSearch(searchBox.value)">
   </div>
+  <p *ngIf="!breweries.length" class='breweries__alert'>No breweries found</p>
   <ul class="breweries__list breweries-list">
     <li class="breweries-list__item" *ngFor="let brewery of breweries">
       <a class="breweries-list__link" routerLink="/detail/{{brewery.id}}">
